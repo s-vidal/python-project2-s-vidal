@@ -1,0 +1,4 @@
+PM042020, 17:49:50 log entry 1
+PM042020, 17:49:50 log entry 2
+PM042020, 17:49:55 log entry 1
+PM042020, 17:49:55 log entry 2
