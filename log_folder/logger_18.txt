@@ -6,3 +6,5 @@ PM042020, 18:32:18 log entry 1
 PM042020, 18:32:18 log entry 2
 PM042020, 18:32:20 log entry 1
 PM042020, 18:32:20 log entry 2
+PM042020, 20:53:46 log entry 5
+PM042020, 20:54:29 log entry 5

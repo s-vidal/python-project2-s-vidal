@@ -17,7 +17,8 @@ class User:
         try:
             if not name:
                 name = self.name
-            csv_file = FileHandler.load_from_csv("user.csv")
+            user_csv = FileHandler("user.csv")
+            csv_file = user_csv.load_from_csv_as_array()
             for row in csv_file:
                 if row[1] == name and row[3] == password:
                     print("\n" + str(name) + "'s role is: " + row[4])
