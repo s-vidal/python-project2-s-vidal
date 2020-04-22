@@ -22,7 +22,7 @@ class User:
             for row in csv_file:
                 if row[1] == name and row[3] == password:
                     print("\n" + str(name) + "'s role is: " + row[4])
-                    return row[4]
+                    return row[6]
             print("\nincorrect username/ password ")
             return False
         except Exception as e:

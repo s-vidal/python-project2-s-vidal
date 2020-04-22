@@ -63,21 +63,39 @@ class FileHandler:
         except Exception as e:
             print(e)
 
+    def write_to_csv(self, csv_array):
+        with open(str(self.__file_path), "w", newline="") as write_file:
+            writer = csv.writer(write_file, delimiter=',')
+            writer.writerows(csv_array)
+
     def remove_row_from_csv(self, user_id):
         try:
             csv_array = self.load_from_csv_as_array()
             for row in csv_array:
                 if (row[0]) == str(user_id):
                     csv_array.remove(row)
-                    with open(str(self.__file_path), "w", newline="") as write_file:
-                        writer = csv.writer(write_file, delimiter=',')
-                        writer.writerows(csv_array)
-                        print(f"successfully removed row with id: {user_id}, from csv file")
-                        return True
+                    self.write_to_csv(csv_array)
+                    print(f"successfully removed row with id: {user_id}, from csv file")
+                    return True
             print("id not found")
             return False
         except Exception as e:
             print(e)
+
+    def update_csv(self, user_id, new_row):
+        # verify new_row input
+        if new_row[0] == user_id:
+            try:
+                csv_array = self.load_from_csv_as_array()
+                csv_array = [new_row if row[0] == user_id else row for row in csv_array]
+                self.__write_to_csv(csv_array)
+                print(f"successfully updated row with id: {user_id}, from csv file")
+                return True
+            except Exception as e:
+                print(e)
+        else:
+            print("wrong input provided, make sure id's correspond")
+            return False
 
 
 def run_tests_file_handler():
@@ -96,6 +114,11 @@ def run_tests_file_handler():
     user_csv.remove_row_from_csv("9")
     print("\n")
     user_csv.remove_row_from_csv("18")
+    print("\n")
+    new_row = ['7', 'Jhon', 'ber', '12345678', 'student', '8', 'student']
+    user_csv.update_csv("7", new_row)
+    print("\n")
+    user_csv.update_csv("8", new_row)
 
 
 if __name__ == "__main__":
