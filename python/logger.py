@@ -45,7 +45,7 @@ class Logger:
             print(e)
 
 
-def run_test_logger():
+def run_tests_logger():
     log_file_1 = Logger()
     log_file_1.add_to_log("log entry 1")
     log_file_1.read_log()
@@ -57,7 +57,7 @@ def run_test_logger():
 
 
 if __name__ == "__main__":
-    run_test_logger()
+    run_tests_logger()
 
 
 

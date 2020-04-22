@@ -105,7 +105,7 @@ def run_tests_file_handler():
     vehicle_csv = FileHandler("vehicle.csv")
     vehicle_csv.load_from_csv_as_array("print")
     array_to_append_1 = ['14', 'Alex', 'ber', '12345678', 'student', '10', 'student']
-    object_to_append_1 = {'id': '15', 'first_name': 'Jon', 'last_name': 'tek', 'password': '423', 'position': 'teacher', 'salary': 'Na', 'role': 'teacher'}
+    object_to_append_1 = {'id': '15', 'first_name': 'Jon', 'last_name': 'tek', 'password': '423', 'position': 'teacher', 'salary': '8', 'role': 'teacher'}
     user_csv.append_array_to_csv(array_to_append_1)
     user_csv.append_dict_to_csv(object_to_append_1)
     print("\n")

@@ -41,14 +41,14 @@ class CarLot:
                     print("invalid input")
                     return False
             # append new rows to csv file
-            has_successfully_appended = False
             for row in ext_csv_fleet_file[1:]:
                 # check if all data is present before appending
                 if len(row) == len(ext_csv_fleet_file[0]):
                     self.vehicle_csv.append_array_to_csv(row)
                     print(f"successfully appended: {row}, to file")
-                    has_successfully_appended = True
-            return has_successfully_appended
+                    return True
+                else:
+                    return False
         except Exception as e:
             print(e)
 
@@ -73,6 +73,21 @@ class CarLot:
         except Exception as e:
             print(e)
 
+    def get_all_cars_by_filter(self, and_or="and", **kwargs):
+        vehicle_csv_file = self.vehicle_csv.load_from_csv_as_array()
+        key_indexes = []
+        for key, value in list(kwargs.items()):
+            if key in vehicle_csv_file[0]:
+                key_indexes.append(vehicle_csv_file[0].index(key))
+        print(key_indexes)
+
+        # filtered_cars = []
+        # for row in vehicle_csv_file:
+        #     for key, value in list(kwargs.items()):
+        #         key_index = vehicle_csv_file[0].index(key)
+        #         if row[key_index] == value:
+        #             filtered_cars.append(row)
+        # print(filtered_cars)
 
 def run_tests_car_lot():
     car_lot_1 = CarLot("345")
@@ -82,6 +97,8 @@ def run_tests_car_lot():
     car_lot_1.get_all_cars_by_brand("toyota")
     car_lot_1.get_all_cars_by_brand("mitsubishi")
     car_lot_1.get_all_cars_by_brand("opel")
+    car_lot_1.get_all_cars_by_filter("and", brand="toyota", door_count = "4")
+
 
 
 if __name__ == "__main__":

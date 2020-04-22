@@ -10,3 +10,5 @@ id,first_name,last_name,password,position,salary,role
 11,amira,bernsdtein,12345678,teacher,10,teacher
 14,Alex,ber,12345678,student,10,student
 15,Jon,tek,423,teacher,Na,teacher
+16,Terry,J.A,1123,student,Na,student
+17,Thoma,J.P,345,assistant,4,assistant
