@@ -1,0 +1,3 @@
+PM042020, 22:20:58 name 'test' is not defined
+PM042020, 22:21:21 remove_row_from_csv() takes 2 positional arguments but 3 were given
+PM042020, 22:21:49 'FileHandler' object has no attribute 'remove_row_from'

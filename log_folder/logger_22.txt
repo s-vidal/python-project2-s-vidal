@@ -1,0 +1,4 @@
+PM042020, 22:08:41 get_fleet_size() takes 1 positional argument but 2 were given
+PM042020, 22:10:22 name 'hello' is not defined
+PM042020, 22:24:03 log entry 1
+PM042020, 22:24:03 log entry 2
